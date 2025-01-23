@@ -1,0 +1,14 @@
+name: Validate normalized paths JSON
+
+on: [pull_request]
+
+jobs:
+  verify-json-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate normalized paths against JSON Schema
+        uses: cardinalby/schema-validator-action@v2
+        with:
+          file: 'normalized_paths.json'
+          schema: 'normalized_paths.schema.json'

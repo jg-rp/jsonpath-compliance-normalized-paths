@@ -1,4 +1,4 @@
-# JSONPath Normalized Test Suite
+# JSONPath Normalized Path Test Suite
 
 A suite of tests for _normalized paths_, the string representation of a node's location as defined by [section 2.7 of RFC 9535](https://datatracker.ietf.org/doc/html/rfc9535#name-normalized-paths).
 
