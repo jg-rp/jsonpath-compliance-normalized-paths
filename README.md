@@ -8,7 +8,7 @@ This is inspired by the [JSONPath Compliance Test Suite](https://github.com/json
 
 `canonical_paths.json` contains test cases for serializing a "compiled" JSONPath query back to a string. The canonical representation of a compiled query is not a normalized path, is not necessarily a singular query and is not specified by RFC 9535.
 
-For our purposes, a canonical path is one that:
+For our purposes, a canonical path is one that (these things are up for debate):
 
 - uses bracket notation rather than shorthand selectors
 - uses single quotes rather than double quotes
