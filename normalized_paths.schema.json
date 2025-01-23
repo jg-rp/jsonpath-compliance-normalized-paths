@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TODO",
+  "title": "Normalized Path Test Suite",
+  "description": "JSONPath Normalized Path Test Suite",
+  "type": "object",
+  "properties": {
+    "tests": {
+      "description": "Individual test cases",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/test_case"
+      }
+    }
+  },
+  "required": ["tests"],
+  "$defs": {
+    "test_case": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/test_case_name"
+        },
+        "query": {
+          "$ref": "#/$defs/query"
+        },
+        "document": {
+          "$ref": "#/$defs/document"
+        },
+        "paths": {
+          "$ref": "#/$defs/paths"
+        }
+      },
+      "required": ["name", "query", "document", "paths"]
+    },
+    "test_case_name": {
+      "description": "The name of the test case",
+      "type": "string",
+      "pattern": "^\\S.*\\S$"
+    },
+    "paths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "An array of expected normalized paths, one for each node in the node list."
+    },
+    "query": {
+      "description": "The JSONPath query",
+      "type": "string"
+    },
+    "document": {
+      "description": "The document, the selector is applied to"
+    }
+  }
+}

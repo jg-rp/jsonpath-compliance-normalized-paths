@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TODO",
+  "title": "Canonical Path Test Suite",
+  "description": "JSONPath Canonical Path Test Suite",
+  "type": "object",
+  "properties": {
+    "tests": {
+      "description": "Individual test cases",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/test_case"
+      }
+    }
+  },
+  "required": ["tests"],
+  "$defs": {
+    "test_case": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/test_case_name"
+        },
+        "query": {
+          "$ref": "#/$defs/query"
+        },
+        "canonical": {
+          "$ref": "#/$defs/canonical"
+        }
+      },
+      "required": ["name", "query", "canonical"]
+    },
+    "test_case_name": {
+      "description": "The name of the test case",
+      "type": "string",
+      "pattern": "^\\S.*\\S$"
+    },
+    "canonical": {
+      "description": "The expected string representation of the query in its canonical format.",
+      "type": "string"
+    },
+    "query": {
+      "description": "The JSONPath query",
+      "type": "string"
+    }
+  }
+}
