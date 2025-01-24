@@ -106,6 +106,21 @@
       "canonical": "$[?@['a'] && @['b']]"
     },
     {
+      "name": "filter, logical not",
+      "query": "$[?!@.a || !@.b]",
+      "canonical": "$[?!@['a'] || !@['b']]"
+    },
+    {
+      "name": "filter, logical not, grouped",
+      "query": "$[?!(@.a && !@.b)]",
+      "canonical": "$[?!(@['a'] && !@['b'])]"
+    },
+    {
+      "name": "filter, logical, explicit precedence",
+      "query": "$[?(@.a || @.b) && @.c]",
+      "canonical": "$[?(@['a'] || @['b']) && @['c']]"
+    },
+    {
       "name": "multiple selectors",
       "query": "$[ \"a\",\"b\" ]",
       "canonical": "$['a', 'b']"
